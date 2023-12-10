@@ -1,0 +1,8 @@
+prefix=/Desktop/beyond_nav_tasks/install
+
+Name: wheel_control
+Description: Description of wheel_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
