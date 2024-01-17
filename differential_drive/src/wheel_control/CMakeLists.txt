@@ -209,5 +209,5 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-add_executable(cmd_vel_subscriber src/cmd_vel_subscriber.cpp)
-target_link_libraries(cmd_vel_subscriber ${catkin_LIBRARIES})
+add_executable(differential_drive src/differential_drive.cpp)
+target_link_libraries(differential_drive ${catkin_LIBRARIES})
