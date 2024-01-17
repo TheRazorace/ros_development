@@ -1,0 +1,26 @@
+version: '3.5'
+# xhost +local:root
+
+services:
+  wheel_control:
+    container_name: wheel_control1
+    image: wheel_control:latest
+    restart: no
+
+    stdin_open: true
+    tty: true
+    privileged: true
+    network_mode: host
+    environment:
+          - ROS_MASTER_URI=http://localhost:11311
+          - DISPLAY=$DISPLAY
+          - QT_X11_NO_MITSHM=1
+          - XAUTHORITY=/tmp/.docker.xauth
+
+    command: /bin/bash # rosrun wheel_control cmd_vel_subscriber
+    volumes:
+      # - ~/Desktop/Beyond-Robotics/Differential/differential_drive/src/wheel_control:/catkin_ws/src/wheel_control
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+
+  
